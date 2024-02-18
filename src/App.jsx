@@ -1,8 +1,10 @@
+import Login from "./Pages/Login/Login";
+
 function App() {
   return (
-    <>
-      <h1 className="text-xl">Vite + React</h1>
-    </>
+    <div className="p-4 h-screen flex items-center justify-center">
+     <Login></Login>
+    </div>
   );
 }
 
