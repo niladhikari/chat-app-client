@@ -1,23 +1,25 @@
-import {Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
-import SignUp from './Pages/SignUp/SignUp';
+import SignUp from "./Pages/SignUp/SignUp";
+import { useAuthContext } from "./context/AuthContext";
 
 function App() {
+  const { authUser } = useAuthContext();
   return (
     <div className="p-4 h-screen flex items-center justify-center">
       <Routes>
         <Route
           path="/"
-          element={<Home/>}
+          element={authUser ? <Home /> : <Navigate to={"/login"} />}
         />
         <Route
           path="/login"
-          element={<Login />}
+          element={authUser ? <Navigate to="/" /> : <Login />}
         />
         <Route
           path="/signup"
-          element={<SignUp />}
+          element={authUser ? <Navigate to="/" /> : <SignUp />}
         />
       </Routes>
     </div>
