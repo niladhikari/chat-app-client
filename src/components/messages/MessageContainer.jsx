@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import useConversation from "../../zustand/useConversation";
 import MessageInput from "./MessageInput";
-
+import MessageAll from './MessageAll';
 import { TiMessages } from "react-icons/ti";
 import { useAuthContext } from "../../context/AuthContext";
-import MessageAll from "./MessageAll";
 
 const MessageContainer = () => {
 	const { selectedConversation, setSelectedConversation } = useConversation();
@@ -51,6 +50,7 @@ const NoChatSelected = () => {
 
 // import MessageInput from "./MessageInput";
 // import Messages from "./Messages";
+
 
 // const MessageContainer = () => {
 // 	return (
